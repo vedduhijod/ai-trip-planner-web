@@ -1,11 +1,5 @@
 # 🌍 AI Trip Planner Web  
 
-![License](https://img.shields.io/github/license/vedduhijod/ai-trip-planner-web?style=for-the-badge)  
-![Issues](https://img.shields.io/github/issues/vedduhijod/ai-trip-planner-web?style=for-the-badge)  
-![Stars](https://img.shields.io/github/stars/vedduhijod/ai-trip-planner-web?style=for-the-badge)  
-![Forks](https://img.shields.io/github/forks/vedduhijod/ai-trip-planner-web?style=for-the-badge)  
-![Contributors](https://img.shields.io/github/contributors/vedduhijod/ai-trip-planner-web?style=for-the-badge)  
-
 **⚡ Tech Stack:**  
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)  
