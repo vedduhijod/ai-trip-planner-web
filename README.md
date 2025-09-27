@@ -45,7 +45,7 @@
 ## 📦 Installation & Setup  
 
 ### 1. Clone the Repository  
-```bash
+
 git clone https://github.com/vedduhijod/ai-trip-planner-web.git
 cd ai-trip-planner-web
 2. Install Dependencies
