@@ -14,7 +14,7 @@
 
 ## 🚀 Live Demo  
 
-👉 [AI Trip Planner Web](https://github.com/vedduhijod/ai-trip-planner-web)  
+👉 [AI Trip Planner Web](https://ai-trip-planner-web-inky.vercel.app/create-trip)  
 *(Replace with your deployed app link when ready!)*  
 
 ---
