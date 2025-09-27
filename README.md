@@ -66,6 +66,7 @@ cd ai-trip-planner-web
 
 ### 2. Install Dependencies
 
+```bash
 npm install
 ```
 
@@ -73,7 +74,7 @@ npm install
 
 Create a `.env` file in the root directory:
 
-
+```bash
 VITE_GOOGLE_GEMINI_API_KEY=your_gemini_api_key
 VITE_GOOGLE_AUTH_CLIENT_ID=your_google_oauth_client_id
 VITE_UNSPLASH_ACCESS_KEY=your_unsplash_access_key
@@ -83,7 +84,7 @@ Replace placeholders with your actual API keys.
 
 ### 4. Run the Development Server
 
-
+```bash
 npm run dev
 ```
 
