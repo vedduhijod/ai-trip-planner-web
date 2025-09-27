@@ -1,4 +1,4 @@
-# Logs
+# Logs 
 logs
 *.log
 npm-debug.log*
@@ -7,9 +7,12 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Dependencies
 node_modules
 dist
 dist-ssr
+
+# Local environment files
 *.local
 
 # Editor directories and files
@@ -22,3 +25,13 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Generated files
+components.json
+eslint.config.js
+
+# Ignore lockfile 
+package-lock.json
+
+.env
+.env.local
