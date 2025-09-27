@@ -1,6 +1,3 @@
-Got it! Here’s a **fully copy-paste-ready README** in **one clean block**, with all code blocks and formatting corrected so you can just paste it into your `README.md` without any issues:
-
-````markdown
 # 🌍 AI Trip Planner Web  
 
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org)  
@@ -65,7 +62,7 @@ Got it! Here’s a **fully copy-paste-ready README** in **one clean block**, wit
 ```bash
 git clone https://github.com/vedduhijod/ai-trip-planner-web.git
 cd ai-trip-planner-web
-````
+
 
 ### 2. Install Dependencies
 
