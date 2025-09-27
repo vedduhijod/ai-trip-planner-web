@@ -14,8 +14,7 @@
 
 ## 🚀 Live Demo  
 
-👉 [AI Trip Planner Web](https://ai-trip-planner-web-inky.vercel.app/create-trip)  
-*(Replace with your deployed app link when ready!)*  
+👉 [AI Trip Planner Web](https://ai-trip-planner-web-inky.vercel.app/)  
 
 ---
 
