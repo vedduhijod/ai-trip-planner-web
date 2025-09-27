@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import { Link } from "react-router-dom";
 
+
 function Hero() {
   return (
     <div className="flex flex-col items-center mx-56 gap-9">
@@ -17,11 +18,11 @@ function Hero() {
         itineraries tailored to your interests and budget.
       </p>
 
-      <Link to={"/create-trip"}>
+      <Link to="/create-trip">
         <Button>Get Started, It's free</Button>
       </Link>
 
-      <img src="/landing.png" alt="" className="-mt-35" />
+      <img src="/landing.png" alt="" className="-mt-10" />
     </div>
   );
 }
