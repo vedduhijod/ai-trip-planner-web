@@ -38,9 +38,7 @@ function InfoSection({ trip }) {
             </h2>
           </div>
         </div>
-        <Button>
-          <IoIosSend />
-        </Button>
+
       </div>
     </div>
   );

@@ -27,16 +27,20 @@ function PlaceCardItem({ place }) {
       to={`https://www.google.com/maps/search/?api=1&query=${place.placeName}`}
       target="_blank"
     >
-      <div className="border rounded-xl p-3 flex gap-5 hover:scale-105 transition-all hover:shadow-md cursor-pointer h-full">
+      <div className="border rounded-xl p-3 flex flex-col sm:flex-row gap-3 sm:gap-5 hover:scale-105 transition-transform duration-300 hover:shadow-lg cursor-pointer h-full">
         <img
           src={image}
           alt={place.placeName}
-          className="w-[130px] h-[130px] rounded-xl object-cover"
+          className="w-full sm:w-[130px] h-44 sm:h-[130px] rounded-xl object-cover flex-shrink-0"
         />
-        <div>
-          <h2 className="font-bold text-lg">{place.placeName}</h2>
-          <p className="text-sm text-gray-400">{place.placeDetails}</p>
-          <h2 className="mt-2 text-orange-600 text-sm">⏱️ {place.timeToVisit}</h2>
+        <div className="flex flex-col justify-between">
+          <h2 className="font-bold text-lg sm:text-xl">{place.placeName}</h2>
+          <p className="text-sm sm:text-base text-gray-500 mt-1">
+            {place.placeDetails}
+          </p>
+          <h2 className="mt-2 text-orange-600 text-sm sm:text-base">
+            ⏱️ {place.timeToVisit}
+          </h2>
         </div>
       </div>
     </Link>

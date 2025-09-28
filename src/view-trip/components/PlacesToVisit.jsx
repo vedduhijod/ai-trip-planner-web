@@ -1,20 +1,19 @@
 import React from "react";
 import PlaceCardItem from "./PlaceCardItem";
 
-
-function PlacesToVisit({trip}) {
+function PlacesToVisit({ trip }) {
   return (
-    <div>
-      <h2 className="font-bold text-xl mt-5">Places to Visit</h2>
-      <div>
-        {trip.tripData?.itinerary.map((item, index) => (
-          <div className="">
-            <h2 className="font-medium text-lg mt-5 mb-3">Day {item.day}</h2>
-            <div className="grid md:grid-cols-2 gap-5">
+    <div className="mt-5">
+      <h2 className="font-bold text-xl sm:text-2xl">Places to Visit</h2>
+      <div className="flex flex-col gap-10">
+        {trip.tripData?.itinerary.map((item) => (
+          <div key={item.day}>
+            <h2 className="font-medium text-lg sm:text-xl mt-2 mb-3">
+              Day {item.day}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {item.places.map((place, index) => (
-                <div className="">
-                  <PlaceCardItem place={place} />
-                </div>
+                <PlaceCardItem key={index} place={place} />
               ))}
             </div>
           </div>

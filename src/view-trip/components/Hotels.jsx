@@ -35,28 +35,32 @@ function Hotels({ trip }) {
   }, [trip]);
 
   return (
-    <div>
-      <h2 className="font-bold text-xl mb-5">Hotel Recommendation</h2>
-      <div className="grid grid-cols-2 gap-5 md:grid-cols-3 xl:grid-cols-4">
+    <div className="-mt-5">
+      <h2 className="font-bold text-xl sm:text-2xl mb-5">
+        Hotel Recommendations
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5">
         {trip?.tripData?.hotels?.map((hotel, index) => (
           <Link
             key={index}
             to={`https://www.google.com/maps/search/?api=1&query=${hotel.hotelName},${hotel.hotelAddress}`}
             target="_blank"
           >
-            <div className="border rounded-xl gap-3 mt-2 p-4 hover:scale-105 transition-all hover:shadow-md cursor-pointer hover:rounded-xl">
+            <div className="border rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 hover:shadow-lg cursor-pointer">
               <img
                 src={hotelImages[hotel.hotelName] || "/placeholder.jpeg"}
                 alt={hotel.hotelName}
-                className="rounded-xl w-full h-40 object-cover"
+                className="w-full h-44 sm:h-48 md:h-52 object-cover"
               />
-              <div className="flex flex-col gap-1 mt-2">
-                <h2 className="font-medium">{hotel.hotelName}</h2>
-                <h2 className="text-xs text-gray-500">
+              <div className="p-3 flex flex-col gap-1">
+                <h2 className="font-medium text-sm sm:text-base">
+                  {hotel.hotelName}
+                </h2>
+                <h2 className="text-xs sm:text-sm text-gray-500">
                   📍 {hotel.hotelAddress}
                 </h2>
-                <h2 className="text-sm">💰 {hotel.price}</h2>
-                <h2 className="text-sm">⭐ {hotel.rating}</h2>
+                <h2 className="text-sm sm:text-base">💰 {hotel.price}</h2>
+                <h2 className="text-sm sm:text-base">⭐ {hotel.rating}</h2>
               </div>
             </div>
           </Link>
