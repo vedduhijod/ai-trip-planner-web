@@ -60,7 +60,7 @@ function Header() {
     <header className="p-4 shadow-sm flex justify-between items-center relative">
       {/* Logo */}
       <img
-        src="src/assets/logo.svg"
+        src="logo.svg"
         className="w-28 sm:w-36 cursor-pointer"
         onClick={() => (window.location.href = "/")}
       />
@@ -160,7 +160,7 @@ function Header() {
           <DialogHeader>
             <DialogDescription className="flex flex-col items-center gap-4">
               <img
-                src="src/assets/logo.svg"
+                src="logo.svg"
                 alt="logo"
                 className="w-24 sm:w-28"
               />

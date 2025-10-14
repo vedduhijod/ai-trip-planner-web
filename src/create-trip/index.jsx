@@ -91,10 +91,11 @@ function CreateTrip() {
   });
 
   const OnGenerateTrip = async () => {
-    const user = localStorage.getItem("user");
-    if (!user) {
-      setOpenDialog(true);
-      return;
+const user = localStorage.getItem("user");
+if (!user) {
+  toast("Please sign in from the top right before generating a trip");
+  return;
+
     }
 
     if (
@@ -230,124 +231,119 @@ function CreateTrip() {
 
   return (
     <div className="relative px-5 sm:px-10 md:px-20 lg:px-32 xl:px-40 mt-10">
-  {loading && (
-    <div className="fixed inset-0 bg-black/50 flex flex-col items-center justify-center z-50">
-      <AiOutlineLoading3Quarters className="animate-spin text-white h-16 w-16" />
-      <p className="text-white mt-4 text-lg font-semibold">
-        Generating your trip...
-      </p>
-    </div>
-  )}
-
-  <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl">
-    Tell us your travel preferences🏕️🌴
-  </h2>
-  <p className="mt-3 text-gray-500 text-lg sm:text-xl">
-    Provide a few details and we'll generate an itinerary.
-  </p>
-
-  <div className="mt-10 flex flex-col gap-10">
-    {/* Destination */}
-    <div>
-      <h2 className="text-xl sm:text-2xl my-3 font-medium">Destination</h2>
-      <select
-        value={formData.destination || ""}
-        onChange={(e) => handleInputChange("destination", e.target.value)}
-        className="border rounded-lg px-4 py-2 w-full max-w-md sm:max-w-full"
-      >
-        <option value="">-- Select a destination --</option>
-        {destinations.map((c) => (
-          <option key={c._id} value={c.description}>
-            {c.description}
-          </option>
-        ))}
-      </select>
-    </div>
-
-    {/* Number of days */}
-    <div>
-      <h2 className="text-xl sm:text-2xl my-3 font-medium">How many days?</h2>
-      <Input
-        placeholder="Ex. 3"
-        type="number"
-        className="w-full max-w-md sm:max-w-full"
-        onChange={(e) => handleInputChange("noOfDays", e.target.value)}
-      />
-    </div>
-
-    {/* Budget */}
-    <div>
-      <h2 className="text-xl sm:text-2xl my-3 font-medium">Budget</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-5">
-        {SelectBudgetOptions.map((item, i) => (
-          <div
-            key={i}
-            onClick={() => handleInputChange("budget", item.title)}
-            className={`p-4 border cursor-pointer rounded-lg hover:shadow-lg transition-all ${
-              formData?.budget === item.title ? "shadow-lg border-black" : ""
-            }`}
-          >
-            <h2 className="text-4xl">{item.icon}</h2>
-            <h2 className="font-bold text-lg sm:text-xl">{item.title}</h2>
-            <h2 className="text-sm text-gray-500">{item.desc}</h2>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    {/* Traveler Type */}
-    <div>
-      <h2 className="text-xl sm:text-2xl my-3 font-medium">
-        Who are you traveling with?
-      </h2>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-5">
-        {SelectTravelList.map((item, i) => (
-          <div
-            key={i}
-            onClick={() => handleInputChange("traveler", item.people)}
-            className={`p-4 border cursor-pointer rounded-lg hover:shadow-lg transition-all ${
-              formData?.traveler === item.people ? "shadow-lg border-black" : ""
-            }`}
-          >
-            <h2 className="text-4xl">{item.icon}</h2>
-            <h2 className="font-bold text-lg sm:text-xl">{item.title}</h2>
-            <h2 className="text-sm text-gray-500">{item.desc}</h2>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    {/* Generate Button */}
-    <div className="my-10 justify-center flex">
-      <Button onClick={OnGenerateTrip} disabled={loading} className="w-full max-w-xs sm:max-w-sm">
-        {loading ? <AiOutlineLoading3Quarters className="animate-spin h-6 w-6" /> : "Generate Trip"}
-      </Button>
-    </div>
-  </div>
-
-  {/* Google Sign-In Dialog */}
-  <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-    <DialogContent className="sm:max-w-sm w-full">
-      <DialogHeader>
-        <DialogDescription className="flex flex-col items-center gap-4">
-          <img src="src/assets/logo.svg" alt="logo" className="w-24 sm:w-28" />
-          <h2 className="font-bold text-lg">Sign in with Google</h2>
-          <p className="text-center text-gray-600">
-            Sign in to the App with Google authentication securely
+      {loading && (
+        <div className="fixed inset-0 bg-black/50 flex flex-col items-center justify-center z-50">
+          <AiOutlineLoading3Quarters className="animate-spin text-white h-16 w-16" />
+          <p className="text-white mt-4 text-lg font-semibold">
+            Generating your trip...
           </p>
-          <Button
-            onClick={() => login()}
-            className="mt-5 w-full flex gap-4 items-center justify-center px-4 py-2"
+        </div>
+      )}
+
+      <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl">
+        Tell us your travel preferences🏕️🌴
+      </h2>
+      <p className="mt-3 text-gray-500 text-lg sm:text-xl">
+        Provide a few details and we'll generate an itinerary.
+      </p>
+
+      <div className="mt-10 flex flex-col gap-10">
+        {/* Destination */}
+        <div>
+          <h2 className="text-xl sm:text-2xl my-3 font-medium">Destination</h2>
+          <select
+            value={formData.destination || ""}
+            onChange={(e) => handleInputChange("destination", e.target.value)}
+            className="border rounded-lg px-4 py-2 w-full max-w-md sm:max-w-full"
           >
-            <FcGoogle className="h-7 w-7" />
-            Sign In with Google
+            <option value="">-- Select a destination --</option>
+            {destinations.map((c) => (
+              <option key={c._id} value={c.description}>
+                {c.description}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Number of days */}
+        <div>
+          <h2 className="text-xl sm:text-2xl my-3 font-medium">
+            How many days?
+          </h2>
+          <Input
+            placeholder="Ex. 3"
+            type="number"
+            className="w-full max-w-md sm:max-w-full"
+            onChange={(e) => handleInputChange("noOfDays", e.target.value)}
+          />
+        </div>
+
+        {/* Budget */}
+        <div>
+          <h2 className="text-xl sm:text-2xl my-3 font-medium">Budget</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mt-5">
+            {SelectBudgetOptions.map((item, i) => (
+              <div
+                key={i}
+                onClick={() => handleInputChange("budget", item.title)}
+                className={`p-4 border cursor-pointer rounded-lg hover:shadow-lg transition-all ${
+                  formData?.budget === item.title
+                    ? "shadow-lg border-black"
+                    : ""
+                }`}
+              >
+                <h2 className="text-4xl">{item.icon}</h2>
+                <h2 className="font-bold text-lg sm:text-xl">{item.title}</h2>
+                <h2 className="text-sm text-gray-500">{item.desc}</h2>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Traveler Type */}
+        <div>
+          <h2 className="text-xl sm:text-2xl my-3 font-medium">
+            Who are you traveling with?
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mt-5">
+            {SelectTravelList.map((item, i) => (
+              <div
+                key={i}
+                onClick={() => handleInputChange("traveler", item.people)}
+                className={`p-4 border cursor-pointer rounded-lg hover:shadow-lg transition-all ${
+                  formData?.traveler === item.people
+                    ? "shadow-lg border-black"
+                    : ""
+                }`}
+              >
+                <h2 className="text-4xl">{item.icon}</h2>
+                <h2 className="font-bold text-lg sm:text-xl">{item.title}</h2>
+                <h2 className="text-sm text-gray-500">{item.desc}</h2>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Generate Button */}
+        <div className="my-10 justify-center flex">
+          <Button
+            onClick={OnGenerateTrip}
+            disabled={loading}
+            className="w-full max-w-xs sm:max-w-sm"
+          >
+            {loading ? (
+              <AiOutlineLoading3Quarters className="animate-spin h-6 w-6" />
+            ) : (
+              "Generate Trip"
+            )}
           </Button>
-        </DialogDescription>
-      </DialogHeader>
-    </DialogContent>
-  </Dialog>
-</div>
-  )
+        </div>
+      </div>
+
+      {/* Google Sign-In Dialog */}
+
+    </div>
+  );
 }
 
 export default CreateTrip;

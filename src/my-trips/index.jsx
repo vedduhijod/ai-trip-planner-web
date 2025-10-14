@@ -36,7 +36,7 @@ function Mytrips() {
   }
 
   return (
-    <div className="sm:p-10 md:px-32 lg:px-56 xl:px-72 px-5">
+    <div className="sm:p-10 md:px-32 lg:px-56 xl:px-72 px-5 py-5">
       <h1 className="text-3xl font-bold">My Trips</h1>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 mt-5 gap-7 object-cover rounded-xl">
         {userTrips?.length>0?userTrips.map((trip, index) => (
