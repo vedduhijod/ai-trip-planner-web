@@ -24,7 +24,7 @@ function Hero() {
       <img
         src="/landing.png"
         alt="Landing"
-        className="mt-6 w-full max-w-3xl object-contain"
+        className="-mt-30 w-full max-w-3xl object-contain"
       />
     </div>
   );
