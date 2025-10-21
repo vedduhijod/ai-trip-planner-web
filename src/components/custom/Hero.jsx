@@ -18,13 +18,13 @@ function Hero() {
       </p>
 
       <Link to="/create-trip">
-        <Button className="px-6 py-3 mt-4">Get Started, It's free</Button>
+        <Button className="px-6 py-3 mt-10">Get Started, It's free</Button>
       </Link>
 
       <img
         src="/landing.png"
         alt="Landing"
-        className="-mt-30 w-full max-w-3xl object-contain"
+        className="-mt-7 w-full max-w-3xl object-contain"
       />
     </div>
   );
